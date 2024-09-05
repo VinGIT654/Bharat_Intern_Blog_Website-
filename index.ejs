@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+        .post {
+            background: #fff;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .post h2 {
+            margin: 0;
+            color: #007bff;
+        }
+        .post p {
+            color: #666;
+        }
+        .buttons {
+            margin-top: 1rem;
+        }
+        .buttons a {
+            margin-right: 0.5rem;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .buttons a:hover {
+            color: #0056b3;
+        }
+        .add-post-link {
+            display: block;
+            margin-top: 1rem;
+            text-decoration: none;
+            color: #007bff;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        .add-post-link:hover {
+            text-decoration: underline;
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Blog Homepage</h1>
+    </header>
+    <div class="container">
+        <% posts.forEach(post => { %>
+            <div class="post">
+                <h2><%= post.title %></h2>
+                <p><%= post.content %></p>
+                <div class="buttons">
+                    <a href="/post/<%= post._id %>">View</a>
+                    <a href="/edit-post/<%= post._id %>">Edit</a>
+                </div>
+            </div>
+        <% }); %>
+        <a href="/new-post" class="add-post-link">Add New Post</a>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
